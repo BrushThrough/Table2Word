@@ -215,7 +215,10 @@ class Table_structure_recognition():
         for i in range(8):
             tmp_y = int(self.dir[i][0]) + y
             tmp_x = int(self.dir[i][1]) + x
-            if (self.bitwise_and[tmp_y][tmp_x]):
+            if (tmp_y < self.bitwise_and.shape[0] and
+                tmp_x < self.bitwise_and.shape[1] and
+                    tmp_y  and tmp_x and
+                self.bitwise_and[tmp_y][tmp_x]):
                 self.shrink_point(tmp_y, tmp_x)
 
     def judge_ver_exist(self, y, x):
