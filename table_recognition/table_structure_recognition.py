@@ -58,7 +58,7 @@ class Table_structure_recognition():
         self.frame = cv2.bitwise_or(dilated_col,dilated_row)
         kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (10, 10))
         self.frame = cv2.dilate(self.frame, kernel, iterations=1)
-        cv2.imwrite("frame.png", self.frame)
+       # cv2.imwrite("frame.png", self.frame)
 
 
         # 提取交点特征
@@ -204,7 +204,7 @@ class Table_structure_recognition():
                 # cv2.imshow("seg",cell)
                 # cv2.imshow("seg_2", cell_2)
                 # cv2.waitKey(0)
-                cv2.imwrite(str(len(self.seg_imgs)) + ".png", cell)
+                # cv2.imwrite(str(len(self.seg_imgs)) + ".png", cell)
         os.chdir("..")
         return self.seg_imgs, self.x_point_arr,  self.y_point_arr, self. is_table_vertex,\
                self.table_vertex_horizontal_num,self.table_vertex_vertical_num
